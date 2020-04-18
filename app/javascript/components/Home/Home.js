@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { CSSTransition } from 'react-transition-group'
 import Introduction from './Introduction'
+import Navigation from './Navigation/Navigation'
 
 class Home extends Component { 
 
@@ -9,6 +11,7 @@ class Home extends Component {
 		super()
 
 		this.state = {
+			appear_line: true,
 			navigation_items: [
 				{ id: 1, title: 'MY WORK' },
 				{ id: 2, title: 'ABOUT ME' },
@@ -18,19 +21,28 @@ class Home extends Component {
 		}
 	}
 
+	toggleAppear = () => {
+		this.setState({
+			appear_line: !this.state.appear_line
+		})
+	}
+
 	render() {
+
+		const {appear_line, navigation_items} = this.state
+
 		return (
-			<div>
+			<div className="page">
 
-				<Introduction/>
+				<CSSTransition
+					in={appear_line}
+					appear={true}
+					timeout={1000}
+					classNames="fade">
+					<Introduction appear_line={appear_line}/>
+				</CSSTransition>
 
-				<Link to="/" className="index-button">
-	         index
-	      </Link>
-	      
-				<Link to="/login" className="login-button">            
-				  <div className="login">Log In</div>
-				</Link>
+				<Navigation navigation_items={navigation_items}/>
 			</div>
 		)
 	}

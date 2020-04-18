@@ -20,4 +20,5 @@ require("channels")
 // var ReactRailsUJS = require("react_ujs");
 // ReactRailsUJS.useContext(componentRequireContext);
 
-import "stylesheets/application.scss";
+import 'bootstrap/dist/css/bootstrap.css'
+import 'stylesheets/application.scss'
