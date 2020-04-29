@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title><%= full_title(yield(:title)) %></title>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'https://performance-management-assets.s3.amazonaws.com/static-assets/logo-small.png' %>
+
+    <script src="https://kit.fontawesome.com/ffe7684235.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:800&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <%= stylesheet_pack_tag 'application' %>
+    <%= yield %>
+    <%= javascript_pack_tag 'layout' %>
+  </body>
+</html>
